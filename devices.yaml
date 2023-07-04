@@ -1,0 +1,35 @@
+apiVersion: io.harsh.cooler/v1
+metadata:
+  name: cooler-controller
+  labels:
+    manufacturer: symphony
+spec:
+  target:
+    temperature: '27C'
+    humidity: nil
+  current:
+    temperature: '30C'
+    humidity: '40%'
+  hardware:
+    controller:
+      microcontroller: 'ESP32-devkit-v1'
+      tty: '/dev/ttyUSB0'
+      wifi:
+        type: 'WPA3-personal'
+        secretName: 'homewifi'
+      screen:
+        name: 'KMR-1.8 SPI TFT'
+        display: true
+        resolution: '128*160'
+        input: nil
+      bluetooth: nil
+    dataPlane:
+      microcontroller: 'ESP8266'
+      waterPump: true
+      fan: 'High'
+status:
+  health:
+    waterLevel: '80%'
+  power:
+    unit: '120Wh'
+    inputPower: nil
